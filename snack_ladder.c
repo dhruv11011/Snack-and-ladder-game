@@ -3,8 +3,10 @@
 // 0 - Empty box
 // 1 - Player box
 // These are the codes for the value of data
+// ###  - is a your player
+// ##
 
-#include <stdio.h>  //For Standard Input Output Functions 
+#include <stdio.h>  //For Standard Input Output Functions
 #include <math.h>   //For Mathematical Manipulations
 #include <string.h> //For String Manipulations
 #include <stdlib.h> //For Clear Screen On Mac And For Malloc Function
@@ -442,10 +444,10 @@ void Printing_The_Instructions()
     char choice;
     printf("--------Welcome To The Snake And Ladder Game--------\n");
     printf("\nHere Are The Instructions For The Game: \n\n"
-        "   1.The Dice Ranges From 1 To %d\n"
-        "   2.Snake Is Indicated By Snake Word On Top Of Each Box(If Exist) And A Number Which Tell By What Size You Will Go Back\n"
-        "   3.Ladder Is Indicated By Ladder Word On Top Of Each Box(If Exist) And A Number Which Tell By What Size You Will Up Back\n"
-        "   4.Game Ends When Player Reaches %dth Box.\n",
+           "   1.The Dice Ranges From 1 To %d\n"
+           "   2.Snake Is Indicated By Snake Word On Top Of Each Box(If Exist) And A Number Which Tell By What Size You Will Go Back\n"
+           "   3.Ladder Is Indicated By Ladder Word On Top Of Each Box(If Exist) And A Number Which Tell By What Size You Will Up Back\n"
+           "   4.Game Ends When Player Reaches %dth Box.\n",
            DICE_SIZE, GAME_SIZE * GAME_SIZE);
 
     printf("\nDo U Want To Start The Game?(Y): ");
@@ -505,9 +507,7 @@ void Change_Of_Players_Location(struct Node *arr[GAME_SIZE * GAME_SIZE], int Cha
 {
     struct Node *tp = arr[Current_Location];
 
-    
     tp->data = 0;
-    
 
     Current_Location += Change;
     tp = arr[Current_Location];
